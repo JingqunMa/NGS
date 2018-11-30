@@ -1,0 +1,4 @@
+for i in `find . -name "*_001.fastq.gz"`
+do
+zcat $i | echo "$i" : $((`wc -l`/4))>>raw_totalReads.txt
+done
